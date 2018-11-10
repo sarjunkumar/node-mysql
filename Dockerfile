@@ -2,7 +2,7 @@ FROM node:9.11.2
 LABEL maintainer="Arjun"
 
 ENV MYSQL_USER=mysql \
-    MYSQL_VERSION=5.7.22 \
+    MYSQL_VERSION=5.5 \
     MYSQL_DATA_DIR=/var/lib/mysql \
     MYSQL_RUN_DIR=/run/mysqld \
     MYSQL_LOG_DIR=/var/log/mysql
