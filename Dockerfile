@@ -17,7 +17,7 @@ LABEL maintainer="Arjun"
 #RUN chmod 755 /sbin/entrypoint.sh
 #
 RUN apt-get update \ 
- && apt-get install mysql-server-5.5
+ && apt-get install -y mysql-server-5.5
 EXPOSE 3306/tcp
 
 #ENTRYPOINT ["/sbin/entrypoint.sh"]
