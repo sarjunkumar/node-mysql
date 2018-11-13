@@ -1,8 +1,5 @@
-FROM node:9.11.2
+FROM arjunkumarselvamani/mysql-node:2.0
 LABEL maintainer="Arjun"
-RUN apt-get update
-RUN apt-get install debconf-utils
-RUN ["/bin/bash", "-c", "debconf-set-selections <<< 'mysql-server mysql-community-server/root-pass password root'"]
-RUN ["/bin/bash", "-c", "debconf-set-selections <<< 'mysql-server mysql-community-server/re-root-pass password root'"]
-RUN apt-get -y install mysql-server
+RUN chown -R mysql:mysql /var/lib/mysql /var/run/mysqld && \
+    service mysql start
 CMD ["/bin/bash"]
